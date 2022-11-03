@@ -1,0 +1,49 @@
+api:
+
+  common:
+    version: 1.0.0
+    title: SL Busline Calculator API
+    description: Calculates which bus lines have the most bus stops on their route
+    termsOfServiceUrl: MINE TERMS OF SERVICE URL
+    license: License
+    licenseUrl: MY LICENSE URL
+
+    contact:
+      name: Ahmed HB
+      url: My
+      email:
+
+  traffic-calculator-service:
+
+    get-buslines-with-max-nr-of-stops:
+      description: Returns which bus lines that have the most bus stops on their route
+      notes: |
+        # Normal response
+        If the request is correct it will return which bus lines have the most bus stops on their route:
+        1. The bus lines
+
+app:
+  trafficLines-service:
+    host: api.sl.se
+  trafficjoures-service:
+    host: api.sl.se
+  trafficstops-service:
+    host: api.sl.se
+  key: 5da196d47f8f4e5facdb68d2e25b9eae
+  traffic-calculator-service:
+    max: 10
+
+logging:
+  level:
+    root: INFO
+    com.ahmed: DEBUG
+
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+---
+spring.profiles: docker
+
+server.port: 8080

@@ -1,0 +1,4 @@
+rootProject.name = 'SlTrafficCalculator'
+include 'microservice:sltrafficcalculator-service'
+findProject(':microservice:sltrafficcalculator-service')?.name = 'sltrafficcalculator-service'
+
