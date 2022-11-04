@@ -32,7 +32,6 @@ public class CalculateBusLineStops {
                 .map(busline -> mapToUniqueBusStops(allStops, busline))
                 .sorted(compareByNrOfStops)
                 .limit(max)
-
                 .collect(Collectors.toList());
 
         BusLines busLines = BusLines.builder()
@@ -66,8 +65,6 @@ public class CalculateBusLineStops {
                         && jour.getDirectionCode().equalsIgnoreCase("1")
                 )
                 .collect(Collectors.toList());
-
-        //LOG.info("Test line: {} size: {}", distinctLineNumber.lineNumber, stopsForLineNumber.size());
 
         BusLine busLine = BusLine.builder()
                 .lineNumber(distinctLineNumber.getLineNumber())
